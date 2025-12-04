@@ -22,9 +22,9 @@ app.use(morgan('tiny'))
 
 app.get('/', (req, res) => res.json('Apertre Server 🚀'))
 
-app.use('/api/v1/mentor', mentorRoute)
-app.use('/api/v1/mentee', menteeRoute)
-app.use('/api/v1/repo', repoRoute)
+app.use('/mentor', mentorRoute)
+app.use('/mentee', menteeRoute)
+app.use('/repo', repoRoute)
 
 
 const port = process.env.PORT || 3000

@@ -31,7 +31,7 @@ async function createLeaderboard() {
     console.time('Time elapsed')
 
     try {
-        const response = await fetch(`${process.env.SERVER_URL}/api/v1/repo/getrepos`)
+        const response = await fetch(`${process.env.SERVER_URL}/repo/getrepos`)
 
         if (!response.ok) {
             throw new Error(`Error: ${response.status}`)
