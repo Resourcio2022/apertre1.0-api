@@ -27,7 +27,12 @@ app.use('/mentee', menteeRoute)
 app.use('/repo', repoRoute)
 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT
+if (!port) {
+    console.error('PORT is not defined in .env file')
+    process.exit(1)
+}
+
 connectDB().then(() => {
     app.listen(port, () => {
         console.log(`SERVER PORT : ${port}`)
