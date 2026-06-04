@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    pull_policy: build
     image: ${IMAGE_TAG:-apertre1-api:latest}
     container_name: ${CONTAINER_NAME:-apertre1-api}
     restart: unless-stopped
