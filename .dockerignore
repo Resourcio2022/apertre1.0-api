@@ -1,0 +1,26 @@
+# ---- dependencies & committed build output (reinstalled inside the image) ----
+node_modules
+dist
+
+# ---- VCS / CI / editor ----
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# ---- env & secrets (never bake into an image) ----
+.env
+.env.*
+!.env.example
+
+# ---- logs / tmp ----
+*.log
+npm-debug.log*
+
+# ---- docker / platform / docs ----
+Dockerfile
+.dockerignore
+docker-compose.yml
+vercel.json
+*.md

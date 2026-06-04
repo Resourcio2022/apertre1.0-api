@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${IMAGE_TAG:-apertre1-api:latest}
+    container_name: ${CONTAINER_NAME:-apertre1-api}
+    restart: unless-stopped
+    env_file:
+      - /home/ubuntu/apertre/secrets/apertre1.0.env
+    ports:
+      - "${HOST_PORT}:8000"
+    networks:
+      - apertre
+
+networks:
+  apertre:
+    name: apertre
+    external: true
